@@ -5,12 +5,30 @@ export default function NewsCard(props) {
   const { news } = props;
   const navigation = useNavigation();
 
+  const goToNews = () => {
+    navigation.navigate("OpenNews", { news });
+  };
+
   return (
-    <Pressable>
+    <Pressable onPress={goToNews}>
       <View style={styles.card}>
-        <Text style={styles.content}>{news.content}</Text>
-        <Text style={styles.author}>{news.author ? news.author : "N/A"}</Text>
-        <Image source={{ uri: news.urlToImage }} style={styles.image} />
+        <Text style={styles.title}>{news.title}</Text>
+        <Text style={styles.description}>
+          {news.description
+            ? news.description.slice(0, 180) + "..."
+            : "No description provided"}
+        </Text>
+        <Text style={styles.author}>
+          {news.author ? news.author.slice(0, 30) + "..." : "N/A"}
+        </Text>
+        <Image
+          source={{
+            uri: news.urlToImage
+              ? news.urlToImage
+              : "https://cdn.britannica.com/25/93825-050-D1300547/collection-newspapers.jpg",
+          }}
+          style={styles.image}
+        />
       </View>
     </Pressable>
   );
@@ -20,22 +38,32 @@ const styles = StyleSheet.create({
   card: {
     flex: 1,
     height: 130,
-    backgroundColor: "grey",
+    backgroundColor: "#aec591",
     padding: 5,
     margin: 5,
     borderRadius: 10,
     position: "relative",
   },
-  content: {
+  title: {
+    fontSize: 12,
+    width: 250,
+    padding: 4,
+    fontWeight: "bold",
+  },
+  description: {
     fontSize: 10,
     width: 250,
-    padding: 10,
+    padding: 8,
+    color: "#455a31",
   },
   author: {
-    fontSize: 10,
+    fontSize: 8,
     position: "absolute",
-    bottom: 2,
+    bottom: 4,
     right: 10,
+    color: "#192112",
+    fontWeight: "bold",
+    textAlign: "right",
   },
   image: {
     position: "absolute",
