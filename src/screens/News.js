@@ -5,8 +5,10 @@ import {
   Text,
   View,
   StyleSheet,
+  TextInput,
 } from "react-native";
 import React, { useState, useEffect } from "react";
+import Icon from "react-native-vector-icons/FontAwesome5";
 import NewsList from "../components/NewsList";
 import { getTopNews, getAllNews } from "../api/getNews";
 import Categories from "../components/Categories";
@@ -105,5 +107,21 @@ const styles = StyleSheet.create({
   news: {
     //check this!!
     // backgroundColor: "#455a31",
+  },
+  headerRightContainer: {
+    flexDirection: "row",
+    marginRight: 16,
+  },
+  searchContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: 16,
+  },
+  searchIcon: {
+    marginRight: 8,
+  },
+  searchInput: {
+    color: "#fff",
+    fontSize: 16,
   },
 });
