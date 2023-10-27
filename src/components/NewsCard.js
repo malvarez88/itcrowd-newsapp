@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     margin: 5,
     borderRadius: 10,
     position: "relative",
+    overflow: "hidden",
   },
   title: {
     fontSize: 12,

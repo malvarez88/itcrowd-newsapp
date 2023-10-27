@@ -2,6 +2,7 @@ import { Image } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import NewsScreen from "../screens/News";
 import OpenNewsScreen from "../screens/OpenNews";
+import NewsViewerScreen from "../components/NewsViewer";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,21 @@ export default function TopNewsNavigation() {
       <Stack.Screen
         name="OpenNews"
         component={OpenNewsScreen}
+        options={{
+          headerTitle: (props) => <LogoTitle {...props} />,
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: "#455a31",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      />
+      <Stack.Screen
+        name="NewsViewer"
+        component={NewsViewerScreen}
         options={{
           headerTitle: (props) => <LogoTitle {...props} />,
           headerShown: true,

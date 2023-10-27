@@ -1,4 +1,11 @@
-import { FlatList, Pressable, SafeAreaView, Text, View } from "react-native";
+import {
+  FlatList,
+  Pressable,
+  SafeAreaView,
+  Text,
+  View,
+  StyleSheet,
+} from "react-native";
 import React, { useState, useEffect } from "react";
 import NewsList from "../components/NewsList";
 import { getTopNews } from "../api/getNews";
@@ -21,12 +28,19 @@ export default function News() {
     }
   };
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.news}>
       {/* <Countries /> */}
       <NewsList news={news} />
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  news: {
+    //check this!!
+    backgroundColor: "#455a31",
+  },
+});
 
 // export function Countries() {
 //   return (

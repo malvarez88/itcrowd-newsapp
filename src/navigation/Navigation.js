@@ -4,6 +4,7 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 import AllNewsNavigation from "./AllNewsNavigation";
 import TopNewsNavigation from "./TopNewsNavigation";
 import FavoriteNewsNavigation from "./FavoriteNewsNavigation";
+import WeatherNavigation from "./WeatherNavigation";
 
 const Tab = createBottomTabNavigator();
 
@@ -12,6 +13,9 @@ export default function Navigation() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: "#455a31",
+        },
       }}
     >
       <Tab.Screen
@@ -40,6 +44,15 @@ export default function Navigation() {
           ),
         }}
       />
+      <Tab.Screen
+        name="Weather"
+        component={WeatherNavigation}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="sun" color={color} size={size} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -47,7 +60,7 @@ export default function Navigation() {
 function renderLogo() {
   return (
     <Image
-      source={require("../assets/newsapp.png")}
+      source={require("../assets/newsapp-white2.png")}
       style={{
         width: 40,
         height: 40,
