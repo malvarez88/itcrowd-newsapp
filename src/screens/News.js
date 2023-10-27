@@ -8,28 +8,94 @@ import {
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import NewsList from "../components/NewsList";
-import { getTopNews } from "../api/getNews";
-import { countries } from "../utils/constants";
+import { getTopNews, getAllNews } from "../api/getNews";
+import Categories from "../components/Categories";
 
-export default function News() {
+export default function News(props) {
+  const {
+    route: { params },
+    navigation,
+  } = props;
+
+  const { title } = params;
+
   const [news, setNews] = useState([]);
 
+  const [Select, setSelect] = useState(0);
+  const [Category, setCategory] = React.useState([
+    {
+      id: 1,
+      name: "Top Headlines",
+      category: "general",
+    },
+    {
+      id: 5,
+      name: "Sports",
+      category: "sports",
+    },
+    {
+      id: 2,
+      name: "Business",
+      category: "business",
+    },
+    {
+      id: 3,
+      name: "Entertainment",
+      category: "entertainment",
+    },
+    {
+      id: 4,
+      name: "Health",
+      category: "health",
+    },
+    {
+      id: 6,
+      name: "Science",
+      category: "science",
+    },
+    {
+      id: 7,
+      name: "Technology",
+      category: "technology",
+    },
+  ]);
+
   useEffect(() => {
-    loadTopNews();
+    if (title === "Top") {
+      loadTopNews();
+    } else {
+      loadAllnews();
+    }
   }, []);
 
   const loadTopNews = async () => {
     try {
       const response = await getTopNews();
-      // const newsArray = [];
       setNews(response.articles);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const loadAllnews = async (q) => {
+    const response = await getAllNews(q);
+    setNews(response.articles);
+    try {
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <SafeAreaView style={styles.news}>
-      {/* <Countries /> */}
+      {title === "All" ? (
+        <Categories
+          Category={Category}
+          loadAllnews={loadAllnews}
+          setSelect={setSelect}
+          Select={Select}
+        />
+      ) : null}
       <NewsList news={news} />
     </SafeAreaView>
   );
@@ -38,54 +104,6 @@ export default function News() {
 const styles = StyleSheet.create({
   news: {
     //check this!!
-    backgroundColor: "#455a31",
+    // backgroundColor: "#455a31",
   },
 });
-
-// export function Countries() {
-//   return (
-//     <View>
-//       <FlatList
-//         horizontal
-//         data={countries}
-//         renderItem={({ item, index }) => {
-//           return <Text>hello</Text>;
-//         }}
-//       />
-//       ;
-//     </View>
-//   );
-// }
-
-{
-  /* <View className="px-4 py-2">
-<FlatList
-  data={Category}
-  horizontal
-  showsHorizontalScrollIndicator={false}
-  renderItem={({item, index}) => {
-    return (
-      <TouchableOpacity
-        className={
-          index == Select
-            ? 'px-4 py-1  mr-3 rounded-md bg-redprimary'
-            : 'px-4 py-1  mr-3 rounded-md bg-gray-200'
-        }
-        onPress={() => {
-          setSelect(index);
-          getData2(Category[index].category);
-        }}>
-        <Text
-          className={
-            index == Select
-              ? 'text-white font-Regular'
-              : 'text-gray-600 font-Regular'
-          }>
-          {item.name}
-        </Text>
-      </TouchableOpacity>
-    );
-  }}
-/>
-</View> */
-}

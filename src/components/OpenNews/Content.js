@@ -3,7 +3,6 @@ import React from "react";
 
 export default function Content(props) {
   const { content, description } = props;
-  console.log("🚀 ~ file: Content.js:6 ~ Content ~ props:", props);
   return (
     <ScrollView style={styles.content}>
       <Text style={styles.description}>
@@ -21,13 +20,11 @@ const styles = StyleSheet.create({
   },
   description: {
     fontWeight: "bold",
-    marginBottom: 10,
+    marginBottom: 8,
     fontSize: 14,
     textAlign: "justify",
   },
   text: {
     textAlign: "justify",
-    // padding: 10,
-    // fontSize: 16,
   },
 });

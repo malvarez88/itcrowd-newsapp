@@ -12,15 +12,6 @@ export default function NewsCard(props) {
   return (
     <Pressable onPress={goToNews}>
       <View style={styles.card}>
-        <Text style={styles.title}>{news.title}</Text>
-        <Text style={styles.description}>
-          {news.description
-            ? news.description.slice(0, 180) + "..."
-            : "No description provided"}
-        </Text>
-        <Text style={styles.author}>
-          {news.author ? news.author.slice(0, 30) + "..." : "N/A"}
-        </Text>
         <Image
           source={{
             uri: news.urlToImage
@@ -29,6 +20,17 @@ export default function NewsCard(props) {
           }}
           style={styles.image}
         />
+        <View>
+          <Text style={styles.title}>{news.title}</Text>
+          <Text style={styles.description}>
+            {news.description
+              ? news.description.slice(0, 180) + "..."
+              : "No description provided"}
+          </Text>
+          <Text style={styles.author}>
+            {news.author ? news.author.slice(0, 30) + "..." : "N/A"}
+          </Text>
+        </View>
       </View>
     </Pressable>
   );
@@ -37,41 +39,36 @@ export default function NewsCard(props) {
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    height: 130,
+    height: 350,
     backgroundColor: "#aec591",
-    padding: 5,
     margin: 5,
     borderRadius: 10,
-    position: "relative",
     overflow: "hidden",
+    flexDirection: "column",
+    borderBottomWidth: 1,
+    borderBottomEndRadius: 0,
+    borderBottomLeftRadius: 0,
+    position: "relative",
+  },
+  image: {
+    width: "100%",
+    height: 250,
   },
   title: {
     fontSize: 12,
-    width: 250,
-    padding: 4,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
     fontWeight: "bold",
   },
   description: {
     fontSize: 10,
-    width: 250,
     padding: 8,
     color: "#455a31",
   },
   author: {
     fontSize: 8,
-    position: "absolute",
-    bottom: 4,
-    right: 10,
     color: "#192112",
     fontWeight: "bold",
     textAlign: "right",
-  },
-  image: {
-    position: "absolute",
-    top: 10,
-    right: 10,
-    width: 90,
-    height: 90,
-    borderRadius: 10,
   },
 });

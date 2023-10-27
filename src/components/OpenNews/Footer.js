@@ -9,20 +9,21 @@ export default function Footer(props) {
   return (
     <View style={styles.footer}>
       <View style={styles.authorContainer}>
-        <Text style={{ fontWeight: "bold" }}>Author: </Text>
-        <Text>{author}</Text>
+        <Text style={{ fontWeight: "bold" }}>Source: </Text>
+        {/* <Text>{author}</Text> */}
         <Text>{source.name}</Text>
+
+        <Pressable
+          onPress={() =>
+            navigation.navigate("NewsViewer", {
+              url: url,
+            })
+          }
+          style={styles.readMore}
+        >
+          <Text style={{ color: "#fff" }}>Read More</Text>
+        </Pressable>
       </View>
-      <Pressable
-        onPress={() =>
-          navigation.navigate("NewsViewer", {
-            url: url,
-          })
-        }
-        style={styles.readMore}
-      >
-        <Text style={{ color: "#fff" }}>Read More</Text>
-      </Pressable>
     </View>
   );
 }
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 10,
+    alignItems: "center",
   },
   readMore: {
     backgroundColor: "#58743c",
@@ -48,9 +49,6 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingBottom: 8,
     paddingHorizontal: 4,
-    position: "absolute",
-    top: 100,
-    right: 20,
     borderRadius: 10,
   },
 });
