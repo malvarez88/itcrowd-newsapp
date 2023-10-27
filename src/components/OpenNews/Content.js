@@ -1,16 +1,15 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 
 export default function Content(props) {
   const { content, description } = props;
-  console.log("🚀 ~ file: Content.js:6 ~ Content ~ props:", props);
   return (
-    <View style={styles.content}>
+    <ScrollView style={styles.content}>
       <Text style={styles.description}>
         {description ? description : "N/A"}
       </Text>
       <Text style={styles.text}>{content}</Text>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -21,11 +20,11 @@ const styles = StyleSheet.create({
   },
   description: {
     fontWeight: "bold",
-    marginBottom: 10,
-    fontSize: 20,
+    marginBottom: 8,
+    fontSize: 14,
+    textAlign: "justify",
   },
   text: {
-    padding: 10,
-    // fontSize: 16,
+    textAlign: "justify",
   },
 });
