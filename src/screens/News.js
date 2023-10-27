@@ -103,6 +103,7 @@ export default function News(props) {
   );
 }
 
+
 const styles = StyleSheet.create({
   news: {
     //check this!!
@@ -125,3 +126,4 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
