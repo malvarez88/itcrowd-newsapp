@@ -4,6 +4,7 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 import Header from "../components/OpenNews/Header";
 import Content from "../components/OpenNews/Content";
 import Footer from "../components/OpenNews/Footer";
+import Favorite from "../components/Favorite";
 
 export default function OpenNews(props) {
   const {
@@ -44,6 +45,7 @@ export default function OpenNews(props) {
         <Content description={description} content={content} />
         <Footer author={author} source={source} url={url} />
       </SafeAreaView>
+      <Favorite news={params.news} />
     </View>
   );
 }
@@ -52,5 +54,6 @@ const styles = StyleSheet.create({
   open: {
     backgroundColor: "#0a0905",
     height: "100%",
+    position: "relative",
   },
 });
