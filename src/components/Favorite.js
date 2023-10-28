@@ -30,7 +30,7 @@ export default function Favorite(props) {
   return (
     <View style={styles.favorite}>
       <Pressable onPress={handleFavorite}>
-        <Icon name="heart" color={isFavorited ? "red" : "white"} size={20} />
+        <Icon name="heart" color={isFavorited ? "red" : "#fff"} size={20} />
       </Pressable>
     </View>
   );

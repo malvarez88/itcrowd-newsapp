@@ -114,6 +114,7 @@ export default function News(props) {
 const styles = StyleSheet.create({
   newsContainer: {
     backgroundColor: "#0a0905",
+    height: "100%",
   },
   news: {
     //check this!!
