@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 10,
     left: 10,
-    backgroundColor: "#58743c",
+    backgroundColor: "#867446",
     padding: 6,
     borderRadius: 10,
   },
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     position: "absolute",
-    backgroundColor: "#58743c",
+    backgroundColor: "#867446",
     padding: 14,
     bottom: 0,
     justifyContent: "center",

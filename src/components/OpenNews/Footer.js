@@ -9,9 +9,9 @@ export default function Footer(props) {
   return (
     <View style={styles.footer}>
       <View style={styles.authorContainer}>
-        <Text style={{ fontWeight: "bold" }}>Source: </Text>
+        <Text style={{ fontWeight: "bold", color: "#fff" }}>Source: </Text>
         {/* <Text>{author}</Text> */}
-        <Text>{source.name}</Text>
+        <Text style={{ color: "white" }}>{source.name}</Text>
 
         <Pressable
           onPress={() =>
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   readMore: {
-    backgroundColor: "#58743c",
+    backgroundColor: "#867446",
     width: 80,
     display: "flex",
     justifyContent: "center",
@@ -50,5 +50,6 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     paddingHorizontal: 4,
     borderRadius: 10,
+    color: "white",
   },
 });

@@ -14,7 +14,7 @@ export default function Navigation() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: "#455a31",
+          backgroundColor: "#0a0905",
         },
       }}
     >

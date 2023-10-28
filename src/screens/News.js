@@ -60,6 +60,11 @@ export default function News(props) {
       name: "Technology",
       category: "technology",
     },
+    {
+      id: 8,
+      name: "Bitcoin",
+      category: "bitcoin",
+    },
   ]);
 
   useEffect(() => {
@@ -89,22 +94,27 @@ export default function News(props) {
   };
 
   return (
-    <SafeAreaView style={styles.news}>
-      {title === "All" ? (
-        <Categories
-          Category={Category}
-          loadAllnews={loadAllnews}
-          setSelect={setSelect}
-          Select={Select}
-        />
-      ) : null}
-      <NewsList news={news} />
-    </SafeAreaView>
+    <View style={styles.newsContainer}>
+      <SafeAreaView style={styles.news}>
+        {title === "All" && (
+          <Categories
+            Category={Category}
+            loadAllnews={loadAllnews}
+            setSelect={setSelect}
+            Select={Select}
+          />
+        )}
+        <NewsList news={news} />
+      </SafeAreaView>
+    </View>
   );
 }
 
 
 const styles = StyleSheet.create({
+  newsContainer: {
+    backgroundColor: "#0a0905",
+  },
   news: {
     //check this!!
     // backgroundColor: "#455a31",

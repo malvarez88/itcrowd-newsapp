@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import { useEffect } from "react";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import Header from "../components/OpenNews/Header";
@@ -38,10 +38,19 @@ export default function OpenNews(props) {
   }, [navigation, params]);
 
   return (
-    <View>
-      <Header image={urlToImage} title={title} published={publishedAt} />
-      <Content description={description} content={content} />
-      <Footer author={author} source={source} url={url} />
+    <View style={styles.open}>
+      <SafeAreaView>
+        <Header image={urlToImage} title={title} published={publishedAt} />
+        <Content description={description} content={content} />
+        <Footer author={author} source={source} url={url} />
+      </SafeAreaView>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  open: {
+    backgroundColor: "#0a0905",
+    height: "100%",
+  },
+});
