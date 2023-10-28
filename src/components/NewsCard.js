@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   card: {
     flex: 1,
     height: 350,
-    backgroundColor: "#aec591",
+    backgroundColor: "#c0ad88",
     margin: 5,
     borderRadius: 10,
     overflow: "hidden",

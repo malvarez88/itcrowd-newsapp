@@ -23,8 +23,10 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     fontSize: 14,
     textAlign: "justify",
+    color: "#fff",
   },
   text: {
     textAlign: "justify",
+    color: "#fff",
   },
 });

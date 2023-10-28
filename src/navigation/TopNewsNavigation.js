@@ -17,7 +17,7 @@ export default function TopNewsNavigation() {
           headerTitle: (props) => <LogoTitle {...props} />,
           headerShown: true,
           headerStyle: {
-            backgroundColor: "#455a31",
+            backgroundColor: "#0a0905",
           },
           headerTintColor: "#fff",
           headerTitleStyle: {
@@ -31,9 +31,9 @@ export default function TopNewsNavigation() {
         component={OpenNewsScreen}
         options={{
           headerTitle: (props) => <LogoTitle {...props} />,
-          headerShown: true,
+          headerShown: false,
           headerStyle: {
-            backgroundColor: "#455a31",
+            backgroundColor: "#0a0905",
           },
           headerTintColor: "#fff",
           headerTitleStyle: {
