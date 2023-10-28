@@ -1,5 +1,6 @@
 import { View, Text, Pressable, Image, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import Favorite from "./Favorite";
 
 export default function NewsCard(props) {
   const { news } = props;
@@ -20,6 +21,7 @@ export default function NewsCard(props) {
           }}
           style={styles.image}
         />
+        <Favorite news={news} />
         <View>
           <Text style={styles.title}>{news.title}</Text>
           <Text style={styles.description}>
@@ -45,6 +47,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     overflow: "hidden",
     flexDirection: "column",
+    justifyContent: "space-between",
     borderBottomWidth: 1,
     borderBottomEndRadius: 0,
     borderBottomLeftRadius: 0,

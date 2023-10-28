@@ -96,14 +96,14 @@ export default function News(props) {
   return (
     <View style={styles.newsContainer}>
       <SafeAreaView style={styles.news}>
-        {title === "All" ? (
+        {title === "All" && (
           <Categories
             Category={Category}
             loadAllnews={loadAllnews}
             setSelect={setSelect}
             Select={Select}
           />
-        ) : null}
+        )}
         <NewsList news={news} />
       </SafeAreaView>
     </View>
