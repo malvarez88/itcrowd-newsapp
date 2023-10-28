@@ -5,12 +5,32 @@ export default function NewsCard(props) {
   const { news } = props;
   const navigation = useNavigation();
 
+  const goToNews = () => {
+    navigation.navigate("OpenNews", { news });
+  };
+
   return (
-    <Pressable>
+    <Pressable onPress={goToNews}>
       <View style={styles.card}>
-        <Text style={styles.content}>{news.content}</Text>
-        <Text style={styles.author}>{news.author ? news.author : "N/A"}</Text>
-        <Image source={{ uri: news.urlToImage }} style={styles.image} />
+        <Image
+          source={{
+            uri: news.urlToImage
+              ? news.urlToImage
+              : "https://cdn.britannica.com/25/93825-050-D1300547/collection-newspapers.jpg",
+          }}
+          style={styles.image}
+        />
+        <View>
+          <Text style={styles.title}>{news.title}</Text>
+          <Text style={styles.description}>
+            {news.description
+              ? news.description.slice(0, 180) + "..."
+              : "No description provided"}
+          </Text>
+          <Text style={styles.author}>
+            {news.author ? news.author.slice(0, 30) + "..." : "N/A"}
+          </Text>
+        </View>
       </View>
     </Pressable>
   );
@@ -19,30 +39,36 @@ export default function NewsCard(props) {
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    height: 130,
-    backgroundColor: "grey",
-    padding: 5,
+    height: 350,
+    backgroundColor: "#aec591",
     margin: 5,
     borderRadius: 10,
+    overflow: "hidden",
+    flexDirection: "column",
+    borderBottomWidth: 1,
+    borderBottomEndRadius: 0,
+    borderBottomLeftRadius: 0,
     position: "relative",
   },
-  content: {
+  image: {
+    width: "100%",
+    height: 250,
+  },
+  title: {
+    fontSize: 12,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    fontWeight: "bold",
+  },
+  description: {
     fontSize: 10,
-    width: 250,
-    padding: 10,
+    padding: 8,
+    color: "#455a31",
   },
   author: {
-    fontSize: 10,
-    position: "absolute",
-    bottom: 2,
-    right: 10,
-  },
-  image: {
-    position: "absolute",
-    top: 10,
-    right: 10,
-    width: 90,
-    height: 90,
-    borderRadius: 10,
+    fontSize: 8,
+    color: "#192112",
+    fontWeight: "bold",
+    textAlign: "right",
   },
 });
