@@ -8,7 +8,13 @@ const Stack = createNativeStackNavigator();
 export default function WeatherNavigation() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Weather App" component={WeatherScreen} />
+      <Stack.Screen
+        name="Weather App"
+        component={WeatherScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 }

@@ -1,4 +1,8 @@
-import { WEATHER_URL, WEATHER_API_KEY } from "../utils/constants";
+import {
+  WEATHER_URL,
+  WEATHER_API_KEY,
+  WEATHER_ICON_URL,
+} from "../utils/constants";
 
 export const getWeather = async (lat, lon) => {
   try {
