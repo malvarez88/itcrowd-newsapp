@@ -10,6 +10,11 @@ export const WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?";
 
 export const WEATHER_ICON_URL = "https://openweathermap.org/img/wn/";
 
+export const HOURLY_FORECAST_URL =
+  "https://api.openweathermap.org/data/2.5/forecast?";
+
+export const OPEN_WEATHER = "https://api.openweathermap.org/data/3.0/onecall?";
+
 // #455a31
 // #58743c
 
