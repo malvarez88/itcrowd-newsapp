@@ -17,3 +17,12 @@ export const getCurrentLocation = async () => {
   (response.status = true), (response.location = location);
   return response;
 };
+
+export const getCurrentTime = (sunsetTimestamp) => {
+  const sunsetDate = new Date(sunsetTimestamp * 1000);
+  const hours = sunsetDate.getHours();
+  const minutes = sunsetDate.getMinutes();
+  const seconds = sunsetDate.getSeconds();
+  const formattedTime = `${hours}:${minutes}:${seconds}`;
+  return formattedTime;
+};
