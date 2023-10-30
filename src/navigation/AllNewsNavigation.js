@@ -25,21 +25,6 @@ export default function AllNewsNavigation() {
         }}
         initialParams={{ title: "All" }}
       />
-      {/* <Stack.Screen
-        name="OpenNews"
-        component={OpenNewsScreen}
-        options={{
-          headerTitle: (props) => <LogoTitle {...props} />,
-          headerShown: true,
-          headerStyle: {
-            backgroundColor: "#0a0905",
-          },
-          headerTintColor: "#fff",
-          headerTitleStyle: {
-            fontWeight: "bold",
-          },
-        }}
-      /> */}
     </Stack.Navigator>
   );
 }
