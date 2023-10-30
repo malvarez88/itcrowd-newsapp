@@ -23,7 +23,7 @@ export default function NewsModal({ news, openModal, setOpenModal }) {
     title,
     url,
     urlToImage,
-  } = news;
+  } = news.item;
 
   return (
     <>

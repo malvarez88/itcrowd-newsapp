@@ -16,7 +16,7 @@ export default function NewsList(props) {
     <FlatList
       data={news}
       numColumns={1}
-      renderItem={({ item }) => <NewsCard news={item} />}
+      renderItem={(item) => <NewsCard news={item} />}
     />
   ) : (
     <ActivityIndicator size="large" />

@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export default function NewsCard(props) {
   const { news } = props;
+
   const navigation = useNavigation();
 
   const [openModal, setOpenModal] = useState(false);
@@ -20,22 +21,19 @@ export default function NewsCard(props) {
       <View style={styles.card}>
         <Image
           source={{
-            uri: news.urlToImage
-              ? news.urlToImage
+            uri: news?.item.urlToImage
+              ? news.item.urlToImage
               : "https://cdn.britannica.com/25/93825-050-D1300547/collection-newspapers.jpg",
           }}
           style={styles.image}
         />
         <Favorite news={news} />
         <View>
-          <Text style={styles.title}>{news.title}</Text>
+          <Text style={styles.title}>{news.item.title}</Text>
           <Text style={styles.description}>
-            {news.description
-              ? news.description.slice(0, 180) + "..."
+            {news.item.description
+              ? news.item.description.slice(0, 180) + "..."
               : "No description provided"}
-          </Text>
-          <Text style={styles.author}>
-            {news.author ? news.author.slice(0, 30) + "..." : "N/A"}
           </Text>
         </View>
       </View>

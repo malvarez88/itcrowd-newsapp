@@ -8,10 +8,11 @@ import {
   TextInput,
 } from "react-native";
 import React, { useState, useEffect } from "react";
-import Icon from "react-native-vector-icons/FontAwesome5";
 import NewsList from "../components/NewsList";
 import { getTopNews, getAllNews } from "../api/getNews";
 import Categories from "../components/Categories";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAllNews, selectTopNews } from "../features/NewsSlice";
 
 export default function News(props) {
   const {
@@ -19,9 +20,8 @@ export default function News(props) {
     navigation,
   } = props;
 
+  const dispatch = useDispatch();
   const { title } = params;
-
-  const [news, setNews] = useState([]);
 
   const [Select, setSelect] = useState(0);
   const [Category, setCategory] = React.useState([
@@ -67,6 +67,9 @@ export default function News(props) {
     },
   ]);
 
+  const news =
+    title === "Top" ? useSelector(selectTopNews) : useSelector(selectAllNews);
+
   useEffect(() => {
     if (title === "Top") {
       loadTopNews();
@@ -77,17 +80,15 @@ export default function News(props) {
 
   const loadTopNews = async () => {
     try {
-      const response = await getTopNews();
-      setNews(response.articles);
+      await dispatch(getTopNews());
     } catch (error) {
       console.log(error);
     }
   };
 
   const loadAllnews = async (q) => {
-    const response = await getAllNews(q);
-    setNews(response.articles);
     try {
+      await dispatch(getAllNews(q));
     } catch (error) {
       console.log(error);
     }
@@ -109,7 +110,6 @@ export default function News(props) {
     </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   newsContainer: {
@@ -137,4 +137,3 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
-
