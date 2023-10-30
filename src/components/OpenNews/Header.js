@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 350,
     objectFit: "cover",
-    borderBottomLeftRadius: 50,
-    borderBottomRightRadius: 50,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
   },
   published: {
     position: "absolute",

@@ -26,7 +26,7 @@ export default function FavoriteNewsNavigation() {
         }}
         initialParams={{ title: "Favorites" }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="OpenNews"
         component={OpenNewsScreen}
         options={{
@@ -40,7 +40,7 @@ export default function FavoriteNewsNavigation() {
             fontWeight: "bold",
           },
         }}
-      />
+      /> */}
     </Stack.Navigator>
   );
 }

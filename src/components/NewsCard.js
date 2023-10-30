@@ -1,13 +1,18 @@
 import { View, Text, Pressable, Image, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Favorite from "./Favorite";
+import NewsModal from "./NewsModal";
+import { useState } from "react";
 
 export default function NewsCard(props) {
   const { news } = props;
   const navigation = useNavigation();
 
+  const [openModal, setOpenModal] = useState(false);
+
   const goToNews = () => {
-    navigation.navigate("OpenNews", { news });
+    // navigation.navigate("OpenNews", { news });
+    setOpenModal(!openModal);
   };
 
   return (
@@ -34,6 +39,11 @@ export default function NewsCard(props) {
           </Text>
         </View>
       </View>
+      <NewsModal
+        news={news}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+      />
     </Pressable>
   );
 }
