@@ -72,7 +72,7 @@ export default function Weather() {
           <Image style={styles.icon} source={{ uri: icon }} />
           <Text style={styles.temperature}>{celcius}&#8451;</Text>
           <Text style={{ fontSize: 16, marginBottom: 10 }}>
-            Feels like: {feelsLike}
+            Feels like: {feelsLike}&#8451;
           </Text>
           <View style={styles.infoContainer}>
             <View style={styles.info}>

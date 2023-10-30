@@ -10,7 +10,10 @@ export default function Favorites() {
   return (
     <SafeAreaView style={styles.favorites}>
       {newsFavorited.length === 0 ? (
-        <Text style={{ color: "#fff" }}> There are no favorite news</Text>
+        <Text style={{ color: "#fff", fontSize: 25 }}>
+          {" "}
+          There are no favorite news
+        </Text>
       ) : (
         <NewsList news={newsFavorited} />
       )}
@@ -20,7 +23,10 @@ export default function Favorites() {
 
 const styles = StyleSheet.create({
   favorites: {
-    backgroundColor: "black",
+    backgroundColor: "#0a0905",
     height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

@@ -44,8 +44,8 @@ export default function NewsModal({ news, openModal, setOpenModal }) {
             onPress={() => setOpenModal(!openModal)}
             style={styles.goBack}
           >
-            <Icon name="arrow-left" size={20} color="#fff" />
-            <Text style={{ color: "#fff", fontSize: 14 }}>Go Back</Text>
+            <Icon name="arrow-left" size={24} color="#fff" />
+            <Text style={{ color: "#fff", fontSize: 16 }}>Go Back</Text>
           </Pressable>
         </SafeAreaView>
       </Modal>

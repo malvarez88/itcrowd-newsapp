@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 350,
-    objectFit: "cover",
+    objectFit: "contain",
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
   },

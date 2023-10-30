@@ -59,8 +59,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-between",
     borderBottomWidth: 1,
-    borderBottomEndRadius: 0,
-    borderBottomLeftRadius: 0,
     position: "relative",
   },
   image: {
@@ -68,18 +66,18 @@ const styles = StyleSheet.create({
     height: 250,
   },
   title: {
-    fontSize: 12,
+    fontSize: 14,
     paddingHorizontal: 8,
     paddingVertical: 4,
     fontWeight: "bold",
   },
   description: {
-    fontSize: 10,
+    fontSize: 12,
     padding: 8,
     color: "#455a31",
   },
   author: {
-    fontSize: 8,
+    fontSize: 10,
     color: "#192112",
     fontWeight: "bold",
     textAlign: "right",

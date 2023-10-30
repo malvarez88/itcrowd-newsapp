@@ -43,11 +43,18 @@ export default function HourlyForecast({ item }) {
     return date.toLocaleTimeString(undefined, options);
   };
 
+  // const dateStyle = {
+  //   fontSize: 20,
+  //   styles.text,
+  // };
+
   return (
     <View style={styles.forecast}>
-      <Text style={styles.text}>{getCurrentTime(dt_txt)}</Text>
+      <Text style={styles.largeText}>{getCurrentTime(dt_txt)}</Text>
       <View style={styles.info}>
-        <Text style={styles.text}>{Math.floor(temp - 273)}&#8451;</Text>
+        <Text style={styles.text}>
+          Temperature: {Math.floor(temp - 273)}&#8451;
+        </Text>
       </View>
 
       <Text style={styles.text}>
@@ -56,32 +63,32 @@ export default function HourlyForecast({ item }) {
       <Text style={styles.text}>Humidity: {humidity}%</Text>
       <Text style={styles.text}>Pressure: {pressure}</Text>
       <View style={styles.info}>
-        <Icon name="temperature-high" size={16} color={"#fff"} />
+        <Icon name="temperature-high" size={18} color={"#fff"} />
         <Text style={styles.text}>
           High: {Math.floor(temp_max - 273)}&#8451;
         </Text>
       </View>
       <View style={styles.info}>
-        <Icon name="temperature-low" size={16} color={"#fff"} />
+        <Icon name="temperature-low" size={18} color={"#fff"} />
         <Text style={styles.text}>
           Low: {Math.floor(temp_min - 273)}&#8451;
         </Text>
       </View>
       <View style={styles.info}>
-        <Icon2 name="weather-windy" size={16} color={"#fff"} />
-        <Text style={styles.text}>{speed}</Text>
+        <Icon2 name="weather-windy" size={18} color={"#fff"} />
+        <Text style={styles.text}>Wind: {speed} km/h</Text>
       </View>
       <View style={styles.info}>
-        <Icon2 name="weather-cloudy" size={16} color={"#fff"} />
-        <Text style={styles.text}>{all}%</Text>
+        <Icon2 name="weather-cloudy" size={18} color={"#fff"} />
+        <Text style={styles.text}>Clouds: {all}%</Text>
       </View>
       <View style={styles.info}>
-        <Icon2 name="weather-rainy" size={16} color={"#fff"} />
-        <Text style={styles.text}>{pop}%</Text>
+        <Icon2 name="weather-pouring" size={18} color={"#fff"} />
+        <Text style={styles.text}>Rain: {pop}%</Text>
       </View>
       <View style={styles.info}>
-        <Icon3 name="visibility" size={16} color={"#fff"} />
-        <Text style={styles.text}>{visibility / 100}%</Text>
+        <Icon3 name="visibility" size={18} color={"#fff"} />
+        <Text style={styles.text}>Visibility: {visibility / 100}%</Text>
       </View>
     </View>
   );
@@ -109,6 +116,13 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 15,
+    fontWeight: "300",
+  },
+  largeText: {
+    textAlign: "center",
+    fontSize: 18,
+    fontWeight: "500",
+    color: "#fff",
   },
 });
