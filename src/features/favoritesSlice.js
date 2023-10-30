@@ -9,6 +9,7 @@ export const favoritesSlice = createSlice({
   initialState,
   reducers: {
     addToFavorites: (state, action) => {
+      //should have done it with item.title (if i have time i should CHANGE IT!)
       const publishedAt = state.items.findIndex(
         (item) => item.publishedAt === action.payload.publishedAt
       );

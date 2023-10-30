@@ -4,6 +4,12 @@ export const TOP_HEADLINES_URL =
 
 export const ALL_HEADLINES = "https://newsapi.org/v2/everything?q=";
 
+export const WEATHER_API_KEY = "2431ea90044e74daba2f435146088eb8";
+
+export const WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?";
+
+export const WEATHER_ICON_URL = "https://openweathermap.org/img/wn/";
+
 // #455a31
 // #58743c
 

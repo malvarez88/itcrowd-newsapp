@@ -26,5 +26,13 @@
     "web": {
       "favicon": "./assets/favicon.png"
     }
-  }
+  },
+      "plugins": [
+        [
+          "expo-location",
+          {
+            "locationAlwaysAndWhenInUsePermission": "Allow News App to use your location."
+          }
+        ]
+      ]
 }
