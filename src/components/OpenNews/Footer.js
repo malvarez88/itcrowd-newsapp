@@ -3,8 +3,15 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
 export default function Footer(props) {
-  const { author, source, url } = props;
+  const { author, source, url, setOpenModal } = props;
   const navigation = useNavigation();
+
+  const handleReadMore = () => {
+    navigation.navigate("NewsViewer", {
+      url: url,
+    });
+    setOpenModal((prev) => !prev);
+  };
 
   return (
     <View style={styles.footer}>
@@ -13,14 +20,7 @@ export default function Footer(props) {
         {/* <Text>{author}</Text> */}
         <Text style={{ color: "white" }}>{source.name}</Text>
 
-        <Pressable
-          onPress={() =>
-            navigation.navigate("NewsViewer", {
-              url: url,
-            })
-          }
-          style={styles.readMore}
-        >
+        <Pressable onPress={() => handleReadMore()} style={styles.readMore}>
           <Text style={{ color: "#fff" }}>Read More</Text>
         </Pressable>
       </View>

@@ -25,7 +25,7 @@ export default function AllNewsNavigation() {
         }}
         initialParams={{ title: "All" }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="OpenNews"
         component={OpenNewsScreen}
         options={{
@@ -39,7 +39,7 @@ export default function AllNewsNavigation() {
             fontWeight: "bold",
           },
         }}
-      />
+      /> */}
     </Stack.Navigator>
   );
 }

@@ -26,7 +26,7 @@ export default function TopNewsNavigation() {
         }}
         initialParams={{ title: "Top" }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="OpenNews"
         component={OpenNewsScreen}
         options={{
@@ -40,7 +40,7 @@ export default function TopNewsNavigation() {
             fontWeight: "bold",
           },
         }}
-      />
+      /> */}
       <Stack.Screen
         name="NewsViewer"
         component={NewsViewerScreen}
@@ -48,7 +48,7 @@ export default function TopNewsNavigation() {
           headerTitle: (props) => <LogoTitle {...props} />,
           headerShown: true,
           headerStyle: {
-            backgroundColor: "#455a31",
+            backgroundColor: "#0a0905",
           },
           headerTintColor: "#fff",
           headerTitleStyle: {
