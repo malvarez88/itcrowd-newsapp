@@ -11,7 +11,6 @@ export default function NewsCard(props) {
   const [openModal, setOpenModal] = useState(false);
 
   const goToNews = () => {
-    // navigation.navigate("OpenNews", { news });
     setOpenModal(!openModal);
   };
 

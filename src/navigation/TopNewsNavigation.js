@@ -1,7 +1,6 @@
 import { Image } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import NewsScreen from "../screens/News";
-import OpenNewsScreen from "../screens/OpenNews";
 import NewsViewerScreen from "../components/NewsViewer";
 import { LogoTitle } from "../components/LogoTitle";
 
