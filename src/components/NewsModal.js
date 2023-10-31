@@ -25,6 +25,7 @@ export default function NewsModal({ news, openModal, setOpenModal }) {
     urlToImage,
   } = news.item;
 
+
   return (
     <>
       <Modal visible={openModal} animationType={"slide"} transparent={true}>

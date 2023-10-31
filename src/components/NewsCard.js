@@ -12,7 +12,6 @@ export default function NewsCard(props) {
   const [openModal, setOpenModal] = useState(false);
 
   const goToNews = () => {
-    // navigation.navigate("OpenNews", { news });
     setOpenModal(!openModal);
   };
 
@@ -31,7 +30,7 @@ export default function NewsCard(props) {
         <View>
           <Text style={styles.title}>{news.item.title}</Text>
           <Text style={styles.description}>
-            {news.item.description
+            {news?.item?.description
               ? news.item.description.slice(0, 180) + "..."
               : "No description provided"}
           </Text>

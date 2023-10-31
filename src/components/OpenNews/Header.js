@@ -14,7 +14,7 @@ export default function Header(props) {
         style={styles.image}
       />
       <View style={styles.published}>
-        <Text style={styles.pub}>{published.slice(0, 10)}</Text>
+        <Text style={styles.pub}>{published?.slice(0, 10)}</Text>
       </View>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>{title}</Text>

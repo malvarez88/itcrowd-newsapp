@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Footer(props) {
   const { author, source, url, setOpenModal } = props;
+
   const navigation = useNavigation();
 
   const handleReadMore = () => {
@@ -18,7 +19,7 @@ export default function Footer(props) {
       <View style={styles.authorContainer}>
         <Text style={{ fontWeight: "bold", color: "#fff" }}>Source: </Text>
         {/* <Text>{author}</Text> */}
-        <Text style={{ color: "white" }}>{source.name}</Text>
+        <Text style={{ color: "white" }}>{source?.name}</Text>
 
         <Pressable onPress={() => handleReadMore()} style={styles.readMore}>
           <Text style={{ color: "#fff" }}>Read More</Text>
