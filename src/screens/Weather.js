@@ -52,10 +52,10 @@ export default function Weather() {
   }, [location]);
 
   const icon = `https://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`;
-  const celcius = Math.floor(weather?.main.temp - 273);
-  const low_temp = Math.floor(weather?.main.temp_min - 273);
-  const max_temp = Math.floor(weather?.main.temp_max - 273);
-  const feelsLike = Math.floor(weather?.main.feels_like - 273);
+
+  const celciusCalculator = (value) => {
+    return Math.floor(value - 273);
+  };
 
   return (
     <SafeAreaView style={styles.weather}>
@@ -70,18 +70,24 @@ export default function Weather() {
             {weather?.weather[0].description}
           </Text>
           <Image style={styles.icon} source={{ uri: icon }} />
-          <Text style={styles.temperature}>{celcius}&#8451;</Text>
+          <Text style={styles.temperature}>
+            {celciusCalculator(weather?.main.temp)}&#8451;
+          </Text>
           <Text style={{ fontSize: 16, marginBottom: 10 }}>
-            Feels like: {feelsLike}&#8451;
+            Feels like: {celciusCalculator(weather?.main.feels_like)}&#8451;
           </Text>
           <View style={styles.infoContainer}>
             <View style={styles.info}>
               <Icon name="temperature-low" size={20} color={"#fff"} />
-              <Text style={styles.infoTemp}>{low_temp}&#8451;</Text>
+              <Text style={styles.infoTemp}>
+                {celciusCalculator(weather?.main.temp_min)}&#8451;
+              </Text>
             </View>
             <View style={styles.info}>
               <Icon name="temperature-high" size={20} color={"#fff"} />
-              <Text style={styles.infoTemp}>{max_temp}&#8451; </Text>
+              <Text style={styles.infoTemp}>
+                {celciusCalculator(weather?.main.temp_max)}&#8451;{" "}
+              </Text>
             </View>
           </View>
           <View style={styles.infoContainer}>
