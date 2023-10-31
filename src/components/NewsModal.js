@@ -7,6 +7,7 @@ import {
   Text,
 } from "react-native";
 import React from "react";
+import useAuth from "../hooks/useAuth";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import Header from "./OpenNews/Header";
 import Content from "./OpenNews/Content";
@@ -25,6 +26,8 @@ export default function NewsModal({ news, openModal, setOpenModal }) {
     urlToImage,
   } = news;
 
+  const { auth } = useAuth();
+
   return (
     <>
       <Modal visible={openModal} animationType={"slide"} transparent={true}>
@@ -38,7 +41,7 @@ export default function NewsModal({ news, openModal, setOpenModal }) {
               url={url}
               setOpenModal={setOpenModal}
             />
-            <Favorite news={news} />
+            {auth && <Favorite news={news} />}
           </View>
           <Pressable
             onPress={() => setOpenModal(!openModal)}
