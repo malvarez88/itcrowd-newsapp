@@ -3,10 +3,12 @@ import { useNavigation } from "@react-navigation/native";
 import Favorite from "./Favorite";
 import NewsModal from "./NewsModal";
 import { useState } from "react";
+import useAuth from "../hooks/useAuth";
 
 export default function NewsCard(props) {
   const { news } = props;
   const navigation = useNavigation();
+  const { auth } = useAuth();
 
   const [openModal, setOpenModal] = useState(false);
 
@@ -25,7 +27,7 @@ export default function NewsCard(props) {
           }}
           style={styles.image}
         />
-        <Favorite news={news} />
+        {auth && <Favorite news={news} />}
         <View>
           <Text style={styles.title}>{news.title}</Text>
           <Text style={styles.description}>
