@@ -16,9 +16,6 @@ export const favoritesSlice = createSlice({
       if (publishedAt < 0) {
         state.items = [...state.items, action.payload];
       }
-      // else {
-      //   console.warn("You have already added this to favorites");
-      // }
     },
     removeFromFavorites: (state, action) => {
       const publishedAt = state.items.findIndex(
@@ -28,9 +25,6 @@ export const favoritesSlice = createSlice({
       if (publishedAt >= 0) {
         newState.splice(publishedAt, 1);
       }
-      // else {
-      //   console.warn("You cant unfavorite this news");
-      // }
       state.items = newState;
     },
   },
