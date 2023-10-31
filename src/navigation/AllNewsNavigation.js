@@ -15,7 +15,7 @@ export default function AllNewsNavigation() {
           headerTitle: (props) => <LogoTitle {...props} />,
           headerShown: true,
           headerStyle: {
-            backgroundColor: "#455a31",
+            backgroundColor: "#0a0905",
           },
           headerTintColor: "#fff",
           headerTitleStyle: {

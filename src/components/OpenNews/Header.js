@@ -14,7 +14,7 @@ export default function Header(props) {
         style={styles.image}
       />
       <View style={styles.published}>
-        <Text style={styles.pub}>{published.slice(0, 10)}</Text>
+        <Text style={styles.pub}>{published?.slice(0, 10)}</Text>
       </View>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>{title}</Text>
@@ -31,15 +31,15 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 350,
-    objectFit: "cover",
-    borderBottomLeftRadius: 50,
-    borderBottomRightRadius: 50,
+    objectFit: "contain",
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
   },
   published: {
     position: "absolute",
     top: 10,
     left: 10,
-    backgroundColor: "#58743c",
+    backgroundColor: "#867446",
     padding: 6,
     borderRadius: 10,
   },
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     position: "absolute",
-    backgroundColor: "#58743c",
+    backgroundColor: "#867446",
     padding: 14,
     bottom: 0,
     justifyContent: "center",

@@ -36,29 +36,32 @@ export default function Categories(props) {
 
 const styles = StyleSheet.create({
   categories: {
-    paddingVertical: 4,
+    paddingVertical: 8,
     paddingHorizontal: 4,
+    backgroundColor: "#0a0905",
+    marginBottom: 8,
+    // marginTop: 8,
   },
   selected: {
-    paddingVertical: 4,
-    paddingHorizontal: 4,
+    paddingVertical: 8,
+    paddingHorizontal: 8,
     marginRight: 4,
-    borderRadius: 6,
-    backgroundColor: "#102311",
+    borderRadius: 16,
+    backgroundColor: "#c0ad88",
   },
   notselected: {
-    paddingVertical: 4,
-    paddingHorizontal: 4,
+    paddingVertical: 8,
+    paddingHorizontal: 8,
     marginRight: 4,
-    borderRadius: 6,
-    backgroundColor: "#4d9a4d",
+    borderRadius: 16,
+    backgroundColor: "#867446",
   },
   textselected: {
     color: "#fff",
-    fontSize: 12,
+    fontSize: 14,
   },
   textnotselected: {
     color: "#000",
-    fontSize: 12,
+    fontSize: 14,
   },
 });

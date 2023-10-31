@@ -1,7 +1,6 @@
 import { Image } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import NewsScreen from "../screens/News";
-import OpenNewsScreen from "../screens/OpenNews";
 import NewsViewerScreen from "../components/NewsViewer";
 import { LogoTitle } from "../components/LogoTitle";
 
@@ -17,7 +16,7 @@ export default function TopNewsNavigation() {
           headerTitle: (props) => <LogoTitle {...props} />,
           headerShown: true,
           headerStyle: {
-            backgroundColor: "#455a31",
+            backgroundColor: "#0a0905",
           },
           headerTintColor: "#fff",
           headerTitleStyle: {
@@ -27,28 +26,13 @@ export default function TopNewsNavigation() {
         initialParams={{ title: "Top" }}
       />
       <Stack.Screen
-        name="OpenNews"
-        component={OpenNewsScreen}
-        options={{
-          headerTitle: (props) => <LogoTitle {...props} />,
-          headerShown: true,
-          headerStyle: {
-            backgroundColor: "#455a31",
-          },
-          headerTintColor: "#fff",
-          headerTitleStyle: {
-            fontWeight: "bold",
-          },
-        }}
-      />
-      <Stack.Screen
         name="NewsViewer"
         component={NewsViewerScreen}
         options={{
           headerTitle: (props) => <LogoTitle {...props} />,
           headerShown: true,
           headerStyle: {
-            backgroundColor: "#455a31",
+            backgroundColor: "#0a0905",
           },
           headerTintColor: "#fff",
           headerTitleStyle: {

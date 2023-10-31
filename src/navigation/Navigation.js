@@ -14,7 +14,7 @@ export default function Navigation() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: "#455a31",
+          backgroundColor: "#0a0905",
         },
       }}
     >
@@ -49,7 +49,7 @@ export default function Navigation() {
         component={WeatherNavigation}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Icon name="sun" color={color} size={size} />
+            <Icon name="map-marked" color={color} size={size} />
           ),
         }}
       />
