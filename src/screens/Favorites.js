@@ -23,7 +23,7 @@ export default function Favorites() {
         </>
       ) : (
         <Text style={{ color: "#fff", fontSize: 25 }}>
-          You need to be loged in to see favorite news
+          You need to be logged in to see favorite news
         </Text>
       )}
     </SafeAreaView>
