@@ -21,6 +21,9 @@ Welcome to the React Native News App! This real-time news application provides u
 - **React Redux for State Management:**
   - Manages favorite news using React Redux for efficient state management.
 
+- **Authentication:**
+  - Implements basic authentication, restricting access to the ability to save favorites to logged-in users only.
+
 ## Swipe Gestures
 
 This app leverages React Navigation to provide a smooth and intuitive user experience. Swipe gestures have been integrated to enhance navigation between screens and close modals with ease.
@@ -33,8 +36,7 @@ This app leverages React Navigation to provide a smooth and intuitive user exper
 
 These swipe gestures make interaction with modals natural and user-friendly, providing a delightful user experience.
 
-- **Authentication:**
-  - Implements basic authentication, restricting access to the ability to save favorites to logged-in users only.
+
 
 ## Extra Features
 
