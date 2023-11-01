@@ -5,11 +5,18 @@ import {
   Pressable,
   Dimensions,
 } from "react-native";
+import React, { useState } from "react";
 import { LogoTitle } from "./LogoTitle";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import React from "react";
+import Account from "./AccountModal";
 
 export default function Header() {
+  const [accountOpen, setAccountOpen] = useState(false);
+
+  const handleOpenAccount = () => {
+    setAccountOpen(!accountOpen);
+  };
+
   return (
     <SafeAreaView style={styles.header}>
       <View
@@ -23,10 +30,11 @@ export default function Header() {
         }}
       >
         <LogoTitle />
-        <Pressable onPress={() => console.log("drawer")}>
+        <Pressable onPress={handleOpenAccount}>
           <Icon name="account" color={"white"} size={32} />
         </Pressable>
       </View>
+      <Account accountOpen={accountOpen} setAccountOpen={setAccountOpen} />
     </SafeAreaView>
   );
 }
