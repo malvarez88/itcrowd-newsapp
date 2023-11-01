@@ -10,7 +10,7 @@ export default function AccountNavigation() {
         name="Account"
         component={AccountScreen}
         options={{
-          headerShown: true,
+          headerShown: false,
           headerStyle: {
             backgroundColor: "#0a0905",
           },

@@ -43,11 +43,6 @@ export default function HourlyForecast({ item }) {
     return date.toLocaleTimeString(undefined, options);
   };
 
-  // const dateStyle = {
-  //   fontSize: 20,
-  //   styles.text,
-  // };
-
   return (
     <View style={styles.forecast}>
       <Text style={styles.largeText}>{getCurrentTime(dt_txt)}</Text>
