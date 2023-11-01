@@ -26,8 +26,6 @@ Welcome to the React Native News App! This real-time news application provides u
 
 ## Swipe Gestures
 
-This app leverages React Navigation to provide a smooth and intuitive user experience. Swipe gestures have been integrated to enhance navigation between screens and close modals with ease.
-
 ### Swipe to Close Modals:
 
 - **Close Account Modal:** Swipe down to gracefully close the account modal. This intuitive gesture allows users to dismiss the modal effortlessly.
