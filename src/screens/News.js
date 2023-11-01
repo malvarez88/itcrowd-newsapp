@@ -8,7 +8,7 @@ import {
   TextInput,
 } from "react-native";
 import React, { useState, useEffect } from "react";
-import Icon from "react-native-vector-icons/FontAwesome5";
+import Header from "../components/Header";
 import NewsList from "../components/NewsList";
 import { getTopNews, getAllNews } from "../api/getNews";
 import Categories from "../components/Categories";
@@ -110,11 +110,11 @@ export default function News(props) {
   );
 }
 
-
 const styles = StyleSheet.create({
   newsContainer: {
     backgroundColor: "#0a0905",
     height: "100%",
+    flex: 1,
   },
   news: {
     //check this!!
@@ -137,4 +137,3 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
-

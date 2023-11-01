@@ -14,7 +14,7 @@ export default function TopNewsNavigation() {
         component={NewsScreen}
         options={{
           headerTitle: (props) => <LogoTitle {...props} />,
-          headerShown: true,
+          headerShown: false,
           headerStyle: {
             backgroundColor: "#0a0905",
           },
@@ -30,7 +30,7 @@ export default function TopNewsNavigation() {
         component={NewsViewerScreen}
         options={{
           headerTitle: (props) => <LogoTitle {...props} />,
-          headerShown: true,
+          headerShown: false,
           headerStyle: {
             backgroundColor: "#0a0905",
           },

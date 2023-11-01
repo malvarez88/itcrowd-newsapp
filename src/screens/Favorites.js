@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { selectFavorites } from "../features/favoritesSlice";
 import NewsList from "../components/NewsList";
 import useAuth from "../hooks/useAuth";
+import Header from "../components/Header";
 
 export default function Favorites() {
   const newsFavorited = useSelector(selectFavorites);

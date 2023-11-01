@@ -13,7 +13,7 @@ export default function AllNewsNavigation() {
         component={NewsScreen}
         options={{
           headerTitle: (props) => <LogoTitle {...props} />,
-          headerShown: true,
+          headerShown: false,
           headerStyle: {
             backgroundColor: "#0a0905",
           },
