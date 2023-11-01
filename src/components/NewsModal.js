@@ -7,8 +7,9 @@ import {
   Text,
 } from "react-native";
 import React from "react";
+import GestureRecognizer from "react-native-swipe-gestures";
 import useAuth from "../hooks/useAuth";
-import Icon from "react-native-vector-icons/FontAwesome5";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Header from "./OpenNews/Header";
 import Content from "./OpenNews/Content";
 import Footer from "./OpenNews/Footer";
@@ -30,28 +31,41 @@ export default function NewsModal({ news, openModal, setOpenModal }) {
 
   return (
     <>
-      <Modal visible={openModal} animationType={"slide"} transparent={true}>
-        <SafeAreaView style={styles.modal}>
-          <View style={styles.open}>
-            <Header image={urlToImage} title={title} published={publishedAt} />
-            <Content description={description} content={content} />
-            <Footer
-              author={author}
-              source={source}
-              url={url}
-              setOpenModal={setOpenModal}
-            />
-            {auth && <Favorite news={news} />}
-          </View>
-          <Pressable
-            onPress={() => setOpenModal(!openModal)}
-            style={styles.goBack}
-          >
-            <Icon name="arrow-left" size={24} color="#fff" />
-            <Text style={{ color: "#fff", fontSize: 16 }}>Go Back</Text>
-          </Pressable>
-        </SafeAreaView>
-      </Modal>
+      <GestureRecognizer onSwipeDown={() => setOpenModal((prev) => !prev)}>
+        <Modal visible={openModal} animationType={"slide"} transparent={true}>
+          <SafeAreaView style={styles.modal}>
+            <View
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Icon
+                name="gesture-swipe-down"
+                size={30}
+                color={"#fff"}
+                style={{ margin: "auto" }}
+              />
+            </View>
+
+            <View style={styles.open}>
+              <Header
+                image={urlToImage}
+                title={title}
+                published={publishedAt}
+              />
+              <Content description={description} content={content} />
+              <Footer
+                author={author}
+                source={source}
+                url={url}
+                setOpenModal={setOpenModal}
+              />
+              {auth && <Favorite news={news} />}
+            </View>
+          </SafeAreaView>
+        </Modal>
+      </GestureRecognizer>
     </>
   );
 }

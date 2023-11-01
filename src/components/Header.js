@@ -15,7 +15,6 @@ import useAuth from "../hooks/useAuth";
 export default function Header() {
   const [accountOpen, setAccountOpen] = useState(false);
   const { auth } = useAuth();
-  console.log("🚀 ~ file: Header.js:17 ~ Header ~ auth:", auth);
 
   const handleOpenAccount = () => {
     setAccountOpen(!accountOpen);
