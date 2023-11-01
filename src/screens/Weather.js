@@ -60,7 +60,7 @@ export default function Weather() {
   return (
     <SafeAreaView style={styles.weather}>
       {!weather ? (
-        <ActivityIndicator size="large" />
+        <ActivityIndicator size="large" style={{ marginTop: 50 }} />
       ) : (
         <>
           <Text style={styles.city}>
@@ -130,16 +130,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#bfe0e2",
     display: "flex",
     alignItems: "center",
-    // gap: 12,
   },
   city: {
     fontSize: 30,
     fontWeight: "bold",
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 5,
   },
   icon: {
-    width: 150,
+    width: 120,
     height: 100,
   },
   temperature: {
@@ -149,6 +148,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     flexDirection: "row",
     gap: 20,
+    marginBottom: -15,
   },
   info: {
     width: Dimensions.get("screen").width / 2.5,
