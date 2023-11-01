@@ -12,10 +12,6 @@ import UserPanel from "./Auth/UserPanel";
 import useAuth from "../hooks/useAuth";
 
 export default function Account({ accountOpen, setAccountOpen }) {
-  console.log(
-    "🚀 ~ file: AccountModal.js:7 ~ Account ~ accountOpen:",
-    accountOpen
-  );
   const { auth } = useAuth();
 
   return (
