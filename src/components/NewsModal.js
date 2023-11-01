@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#0a0905",
     justifyContent: "flex-start",
+    marginBottom: 60,
   },
   goBack: {
     position: "absolute",

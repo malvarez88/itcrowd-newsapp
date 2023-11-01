@@ -11,7 +11,7 @@ export default function Account({ accountOpen, setAccountOpen }) {
   return (
     <GestureRecognizer onSwipeDown={() => setAccountOpen((prev) => !prev)}>
       <Modal visible={accountOpen} animationType={"slide"} transparent={false}>
-        <SafeAreaView style={{ backgroundColor: "black" }}>
+        <SafeAreaView style={{ backgroundColor: "#0a0905" }}>
           <View
             style={{
               flexDirection: "row",

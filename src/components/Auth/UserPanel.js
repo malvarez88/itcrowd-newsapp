@@ -8,7 +8,6 @@ import {
   Image,
   SafeAreaView,
 } from "react-native";
-import { size } from "lodash";
 import useAuth from "../../hooks/useAuth";
 import { useSelector } from "react-redux";
 import { selectFavorites } from "../../features/favoritesSlice";
