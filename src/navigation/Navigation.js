@@ -5,10 +5,12 @@ import AllNewsNavigation from "./AllNewsNavigation";
 import TopNewsNavigation from "./TopNewsNavigation";
 import FavoriteNewsNavigation from "./FavoriteNewsNavigation";
 import WeatherNavigation from "./WeatherNavigation";
+import { useNavigation } from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
+  const navigation = useNavigation();
   return (
     <Tab.Navigator
       screenOptions={{
@@ -16,6 +18,8 @@ export default function Navigation() {
         tabBarStyle: {
           backgroundColor: "#0a0905",
         },
+        tabBarActiveTintColor: "#f9f7f4",
+        tabBarInactiveTintColor: "#867446",
       }}
     >
       <Tab.Screen
@@ -23,7 +27,7 @@ export default function Navigation() {
         component={TopNewsNavigation}
         options={{
           tabBarLabel: "Top News",
-          tabBarIcon: () => renderLogo(),
+          tabBarIcon: (navigation) => renderLogo(navigation),
         }}
       />
       <Tab.Screen
@@ -57,10 +61,15 @@ export default function Navigation() {
   );
 }
 
-function renderLogo() {
+function renderLogo(navigation) {
+  const active =
+    navigation.color === "#f9f7f4"
+      ? require("../assets/newsapp-white2.png")
+      : require("../assets/newsapp-gold.png");
+
   return (
     <Image
-      source={require("../assets/newsapp-white2.png")}
+      source={active}
       style={{
         width: 40,
         height: 40,
