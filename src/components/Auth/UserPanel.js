@@ -1,6 +1,13 @@
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback, useState } from "react";
-import { View, Text, StyleSheet, Button, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Button,
+  Image,
+  SafeAreaView,
+} from "react-native";
 import { size } from "lodash";
 import useAuth from "../../hooks/useAuth";
 import { useSelector } from "react-redux";
@@ -11,7 +18,7 @@ export default function UserPanel() {
   const favorites = useSelector(selectFavorites);
 
   return (
-    <View style={styles.content}>
+    <SafeAreaView style={styles.content}>
       <View style={styles.titleBlock}>
         <Text style={styles.title}>Welcome, </Text>
         <Text style={styles.title}>{`${auth.firstName} ${auth.lastName}`}</Text>
@@ -24,7 +31,7 @@ export default function UserPanel() {
         <ItemMenu title="Favorites" text={`${favorites.length} News`} />
       </View>
       <Button title="Logout" onPress={logout} style={styles.btnlogout} />
-    </View>
+    </SafeAreaView>
   );
 }
 
